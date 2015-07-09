@@ -1,4 +1,4 @@
-package oldJava;
+package trash;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,15 +34,12 @@ public class Main {
 		//		n1max < n2 (= floor(N/3)) < n3min
 		//		floor(N/3) < n3min
 		for (int n1 = 1; n1 < Math.floor(L / 3); n1++) {
-//			System.out.println("n1="+n1);
+//			System.out.println("count"+n1);
 			if (numbers.get(n1)) {
-				for (int n2 = n1 + 1; n2 < Math.floor((L - n1) / 2); n2++) {
-//					System.out.println("\tn2="+n2);
-					if(numbers.get(n2)){
-						if(numbers.get(L-n1-n2)){
-//							System.out.println("\t\tn3="+(L-n1-n2));
-							answer++;
-						}
+				for (int n2 = n1 + 1; n2 < Math.ceil((double)(L - n1) / 2); n2++) {
+					if(numbers.get(n2) && numbers.get(L-n1-n2) ){
+//						System.out.println(n1+"\t"+n2+"\t"+(L-n1-n2));
+						answer++;
 					}
 				}
 			}

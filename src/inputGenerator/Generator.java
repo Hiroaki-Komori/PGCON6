@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Generator {
 	public static void main(String[] args) {
-		File source = new File("./bin/resources/input.txt");
+		File source = new File("./bin/input.txt");
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(source));
@@ -18,8 +18,8 @@ public class Generator {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		int L = 50;
-		int N = 50;
+		int L = 2000000;
+		int N = 200000;
 		List<Integer> seeds = new ArrayList<>();
 		for (int i = 1; i <= L; i++) {
 			seeds.add(i);
@@ -33,7 +33,7 @@ public class Generator {
 			writer.write(String.valueOf(N));
 			writer.newLine();
 		for (int num: seeds) {
-			System.out.println(num);
+//			System.out.println(num);
 			writer.write(String.valueOf(num));
 			writer.newLine();
 		}
